@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+	
+		<title>Milkshake - SandPit</title>
+
+		<link rel="stylesheet" href="styles/app.css">
+	</head>
+
+	<body>
+		<canvas id="canvas" />
+
+		<script src="vendor/pixi/pixi.dev.js"></script>
+		<script src="sandpit.js"></script>
+		<!--<script src="{{generator.app}}.js"></script>-->
+
+		<script>
+			var renderer = new PIXI.autoDetectRenderer(400, 300, document.getElementById('canvas'));
+
+			document.body.appendChild(renderer.view);
+
+			requestAnimFrame(update);			
+
+			function update()
+			{
+			    requestAnimFrame(update);
+
+			    milkshake.Milkshake.getInstance().update(1);
+			    renderer.render(milkshake.Milkshake.getInstance().stage);
+			}
+
+		</script>
+	</body>
+</html>

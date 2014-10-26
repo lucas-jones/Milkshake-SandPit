@@ -1,0 +1,9 @@
+-main SandPit
+-cp libs/milkshake/src
+-cp libs/milkshake/libs
+-cp src
+-lib compiletime
+-D pixijs
+-js bin/sandpit.js
+
+# -js bin/{settings.name}.js
