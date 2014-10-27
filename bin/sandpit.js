@@ -96,12 +96,8 @@ Reflect.compareMethods = function(f1,f2) {
 var SandPit = function() { };
 SandPit.__name__ = ["SandPit"];
 SandPit.main = function() {
-	var milkshake1 = milkshake.Milkshake.boot();
-	milkshake1.onCreated = function() {
-		milkshake1.scenes.addScene(new SampleScene());
-	};
-	console.log("Milkshake");
-	console.log(milkshake1);
+	var milkshake1 = milkshake.Milkshake.shake();
+	milkshake1.scenes.addScene(new SampleScene());
 };
 var milkshake = {};
 milkshake.core = {};
@@ -139,7 +135,7 @@ milkshake.core.Node.prototype = {
 };
 milkshake.core.Entity = function(id) {
 	milkshake.core.Node.call(this,id);
-	this.position = new milkshake.math.Vector2();
+	this.position = milkshake.math.Vector2.get_ZERO();
 };
 milkshake.core.Entity.__name__ = ["milkshake","core","Entity"];
 milkshake.core.Entity.__super__ = milkshake.core.Node;
@@ -160,6 +156,11 @@ milkshake.core.Entity.prototype = $extend(milkshake.core.Node.prototype,{
 });
 milkshake.core.DisplayObject = function(id) {
 	milkshake.core.Entity.call(this,id);
+	this.scale = milkshake.math.Vector2.get_ONE();
+	this.pivot = milkshake.math.Vector2.get_ONE();
+	this.rotation = 0;
+	this.visible = true;
+	this.alpha = 1;
 	this.displayObject = new PIXI.DisplayObjectContainer();
 };
 milkshake.core.DisplayObject.__name__ = ["milkshake","core","DisplayObject"];
@@ -172,7 +173,7 @@ milkshake.core.DisplayObject.prototype = $extend(milkshake.core.Entity.prototype
 			displayObjectNode.scene = this.scene;
 			displayObjectNode.create();
 		}
-		milkshake.core.Entity.prototype.removeNode.call(this,node);
+		milkshake.core.Entity.prototype.addNode.call(this,node);
 	}
 	,removeNode: function(node) {
 		if(js.Boot.__instanceof(node,milkshake.core.DisplayObject)) {
@@ -183,15 +184,22 @@ milkshake.core.DisplayObject.prototype = $extend(milkshake.core.Entity.prototype
 		}
 		milkshake.core.Entity.prototype.removeNode.call(this,node);
 	}
+	,update: function(delta) {
+		this.displayObject.position.x = this.position.x;
+		this.displayObject.position.y = this.position.y;
+		this.displayObject.scale.x = this.scale.x;
+		this.displayObject.scale.y = this.scale.y;
+		this.displayObject.alpha = this.alpha;
+		this.displayObject.pivot.x = this.pivot.x;
+		this.displayObject.pivot.y = this.pivot.y;
+		this.displayObject.rotation = this.rotation;
+		this.displayObject.visible = this.visible;
+		this.displayObject.alpha = this.alpha;
+		milkshake.core.Entity.prototype.update.call(this,delta);
+	}
 	,create: function() {
 	}
 	,destroy: function() {
-	}
-	,get_visible: function() {
-		return this.displayObject.visible;
-	}
-	,set_visible: function(value) {
-		return this.displayObject.visible = value;
 	}
 	,__class__: milkshake.core.DisplayObject
 });
@@ -207,11 +215,22 @@ milkshake.game.scene.Scene.prototype = $extend(milkshake.core.DisplayObject.prot
 });
 var SampleScene = function() {
 	milkshake.game.scene.Scene.call(this);
+	this.gameObject = new milkshake.core.DisplayObject();
+	var doge = new milkshake.core.Sprite("doge.jpg");
+	this.addNode(this.gameObject);
+	this.gameObject.addNode(doge);
+	this.gameObject.set_x(640.);
+	this.gameObject.set_y(360.);
+	doge.anchor = milkshake.math.Vector2.get_HALF();
 };
 SampleScene.__name__ = ["SampleScene"];
 SampleScene.__super__ = milkshake.game.scene.Scene;
 SampleScene.prototype = $extend(milkshake.game.scene.Scene.prototype,{
-	__class__: SampleScene
+	update: function(delta) {
+		milkshake.game.scene.Scene.prototype.update.call(this,delta);
+		this.gameObject.rotation += 0.01;
+	}
+	,__class__: SampleScene
 });
 var StringBuf = function() {
 	this.b = "";
@@ -810,7 +829,7 @@ milkshake.Milkshake.getInstance = function() {
 	if(milkshake.Milkshake.instance != null) return milkshake.Milkshake.instance;
 	return null;
 };
-milkshake.Milkshake.boot = function(settings) {
+milkshake.Milkshake.shake = function(settings) {
 	return milkshake.Milkshake.instance = new milkshake.Milkshake(settings != null?settings:new milkshake.Settings());
 };
 milkshake.Milkshake.prototype = {
@@ -819,6 +838,23 @@ milkshake.Milkshake.prototype = {
 	}
 	,__class__: milkshake.Milkshake
 };
+milkshake.core.Sprite = function(url,id) {
+	if(id == null) id = "undefined-sprite";
+	milkshake.core.DisplayObject.call(this,id);
+	this.url = url;
+	this.anchor = milkshake.math.Vector2.get_ZERO();
+	this.displayObject.addChild(this.sprite = new PIXI.Sprite(PIXI.Texture.fromImage(url)));
+};
+milkshake.core.Sprite.__name__ = ["milkshake","core","Sprite"];
+milkshake.core.Sprite.__super__ = milkshake.core.DisplayObject;
+milkshake.core.Sprite.prototype = $extend(milkshake.core.DisplayObject.prototype,{
+	update: function(delta) {
+		this.sprite.anchor.x = this.anchor.x;
+		this.sprite.anchor.y = this.anchor.y;
+		milkshake.core.DisplayObject.prototype.update.call(this,delta);
+	}
+	,__class__: milkshake.core.Sprite
+});
 milkshake.game.scene.SceneManager = function() {
 	milkshake.core.DisplayObject.call(this,"sceneManager");
 	this.scenes = new haxe.ds.StringMap();
@@ -835,7 +871,8 @@ milkshake.game.scene.SceneManager.prototype = $extend(milkshake.core.DisplayObje
 	}
 	,changeScene: function(sceneId) {
 		if(this.currentScene != null) this.removeNode(this.currentScene);
-		this.addNode(this.scenes.get(sceneId));
+		this.currentScene = this.scenes.get(sceneId);
+		this.addNode(this.currentScene);
 	}
 	,update: function(deltaTime) {
 		if(this.currentScene != null) this.currentScene.update(deltaTime);
@@ -844,9 +881,22 @@ milkshake.game.scene.SceneManager.prototype = $extend(milkshake.core.DisplayObje
 	,__class__: milkshake.game.scene.SceneManager
 });
 milkshake.math = {};
-milkshake.math.Vector2 = function() {
+milkshake.math.Vector2 = function(x,y) {
+	if(y == null) y = 0;
+	if(x == null) x = 0;
+	this.x = x;
+	this.y = y;
 };
 milkshake.math.Vector2.__name__ = ["milkshake","math","Vector2"];
+milkshake.math.Vector2.get_ZERO = function() {
+	return new milkshake.math.Vector2(0,0);
+};
+milkshake.math.Vector2.get_HALF = function() {
+	return new milkshake.math.Vector2(0.5,0.5);
+};
+milkshake.math.Vector2.get_ONE = function() {
+	return new milkshake.math.Vector2(1,1);
+};
 milkshake.math.Vector2.prototype = {
 	__class__: milkshake.math.Vector2
 };

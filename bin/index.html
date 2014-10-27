@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-	
+
 		<title>Milkshake - SandPit</title>
 
 		<link rel="stylesheet" href="styles/app.css">
@@ -20,16 +20,12 @@
 
 			document.body.appendChild(renderer.view);
 
-			requestAnimFrame(update);			
+			requestAnimFrame(update);
 
 			function update()
 			{
-			    
-
-			    
-			    renderer.render(milkshake.Milkshake.getInstance().stage);
-
 			    milkshake.Milkshake.getInstance().update(1);
+			    renderer.render(milkshake.Milkshake.getInstance().stage);
 
 			    requestAnimFrame(update);
 			}

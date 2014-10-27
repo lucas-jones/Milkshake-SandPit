@@ -6,11 +6,11 @@ import milkshake.game.scene.Scene;
 import milkshake.math.Vector2;
 import milkshake.Milkshake;
 
-class SandPit 
+class SandPit
 {
-	static function main() 
+	static function main()
 	{
-		var milkshake:Milkshake = Milkshake.boot();
+		var milkshake = Milkshake.shake();
 		milkshake.scenes.addScene(new SampleScene());
 	}
 }
@@ -29,10 +29,15 @@ class SampleScene extends Scene
 		addNode(gameObject);
 		gameObject.addNode(doge);
 
-		//gameObject.x = 100;
-		//gameObject.y = 100;
-		gameObject.scale = Vector2.HALF;
+		gameObject.x = 1280 / 2;
+		gameObject.y = 720 / 2;
 		doge.anchor = Vector2.HALF;
-		doge.rotation = -1;
+	}
+
+	override public function update(delta:Float):Void
+	{
+		super.update(delta);
+
+		gameObject.rotation += 0.01;
 	}
 }
