@@ -15,7 +15,8 @@
 		<!--<script src="{{generator.app}}.js"></script>-->
 
 		<script>
-			var renderer = new PIXI.autoDetectRenderer(400, 300, document.getElementById('canvas'));
+			// Should load from json?
+			var renderer = new PIXI.autoDetectRenderer(1280, 720, document.getElementById('canvas'));
 
 			document.body.appendChild(renderer.view);
 
@@ -23,10 +24,14 @@
 
 			function update()
 			{
-			    requestAnimFrame(update);
+			    
+
+			    
+			    renderer.render(milkshake.Milkshake.getInstance().stage);
 
 			    milkshake.Milkshake.getInstance().update(1);
-			    renderer.render(milkshake.Milkshake.getInstance().stage);
+
+			    requestAnimFrame(update);
 			}
 
 		</script>
