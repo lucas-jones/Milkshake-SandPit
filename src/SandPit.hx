@@ -10,7 +10,7 @@ class SandPit
 {
 	static function main()
 	{
-		var milkshake = Milkshake.shake();
+		var milkshake = Milkshake.boot();
 		milkshake.scenes.addScene(new SampleScene());
 	}
 }
@@ -38,6 +38,7 @@ class SampleScene extends Scene
 	{
 		super.update(delta);
 
+		cameras.currentCamera.x++;
 		gameObject.rotation += 0.01;
 	}
 }
