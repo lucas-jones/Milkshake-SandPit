@@ -18,16 +18,17 @@ class SandPit
 class SampleScene extends Scene
 {
 	var gameObject:DisplayObject;
+	var doge:Sprite;
 
 	public function new()
 	{
 		super();
 
+		doge = new Sprite("doge.jpg");
 		gameObject = new DisplayObject();
-		var doge = new Sprite("doge.jpg");
-
-		addNode(gameObject);
+		
 		gameObject.addNode(doge);
+		addNode(gameObject);
 
 		gameObject.x = 1280 / 2;
 		gameObject.y = 720 / 2;
@@ -38,7 +39,7 @@ class SampleScene extends Scene
 	{
 		super.update(delta);
 
-		cameras.currentCamera.x++;
+		scene.cameras.currentCamera.x++;
 		gameObject.rotation += 0.01;
 	}
 }
