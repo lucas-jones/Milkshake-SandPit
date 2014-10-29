@@ -3,6 +3,7 @@
 -cp libs/milkshake/libs
 -cp src
 -lib compiletime
+-lib mconsole
 -D pixijs
 -js bin/sandpit.js
 
