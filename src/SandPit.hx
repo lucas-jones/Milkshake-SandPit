@@ -27,28 +27,27 @@ class SampleScene extends Scene
 
 	public function new()
 	{
-		super("SampleScene", CameraPresets.SPLIT_FOUR);
+		super("SampleScene", CameraPresets.DEFAULT);
 
 
 		doge = new Sprite("doge.jpg");
 		gameObject = new DisplayObject();
-		
+
 		gameObject.addNode(doge);
 		addNode(gameObject);
 
-		//gameObject.x = 1280 / 2;
-		// gameObject.y = 720 / 2;
-		//doge.anchor = Vector2.HALF;
-		doge.width = 1280;
-		doge.height = 720;
+		gameObject.x = 1280 / 2;
+		gameObject.y = 720 / 2;
+		doge.anchor = Vector2.HALF;
+		//doge.width = 1280;
+		//doge.height = 720;
 	}
 
 	override public function update(delta:Float):Void
 	{
-		trace("Update");
 		super.update(delta);
 
 		//scene.cameras.currentCamera.x++;
-		gameObject.rotation += 0.01;
+		gameObject.rotation += 0.02;
 	}
 }
