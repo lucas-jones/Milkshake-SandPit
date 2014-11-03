@@ -7,6 +7,10 @@ import milkshake.game.scene.camera.CameraPresets;
 import milkshake.game.scene.Scene;
 import milkshake.math.Vector2;
 import milkshake.Milkshake;
+import milkshake.utils.Color;
+import milkshake.utils.Globals;
+import milkshake.utils.GraphicsHelper;
+import milkshake.utils.MathHelper;
 
 @:expose
 class SandPit
@@ -22,32 +26,57 @@ class SandPit
 
 class SampleScene extends Scene
 {
-	var gameObject:DisplayObject;
-	var doge:Sprite;
+	var paddleLeft:DisplayObject;
+	var paddleRight:DisplayObject;
+
+	var ball:DisplayObject;
+	var ballX:Float;
+	var ballY:Float;
 
 	public function new()
 	{
-		super("SampleScene", CameraPresets.DEFAULT);
+		super("SampleScene", CameraPresets.DEFAULT, Color.BLACK);
 
+		//gameObject = new DisplayObject();
+		addNode(paddleLeft = GraphicsHelper.generateRectangle(30, 300, Color.WHITE), 
+		{
+			x: 20
+		});
 
-		doge = new Sprite("doge.jpg");
-		gameObject = new DisplayObject();
+		addNode(paddleRight = GraphicsHelper.generateRectangle(30, 300, Color.WHITE), 
+		{
+			// WishList:
+			// x: width - 20
+			// scale.x: 2
+			x: Globals.SCREEN_WIDTH - 50
+		});
 
-		gameObject.addNode(doge);
-		addNode(gameObject);
+		addNode(ball = GraphicsHelper.generateRectangle(30, 30, Color.WHITE), 
+		{
+			anchor: Vector2.HALF,
+			position: Globals.SCREEN_CENTER
+		});
 
-		gameObject.x = 1280 / 2;
-		gameObject.y = 720 / 2;
-		doge.anchor = Vector2.HALF;
-		//doge.width = 1280;
-		//doge.height = 720;
+		ballX = 3;
+		ballY = 3;
 	}
 
 	override public function update(delta:Float):Void
 	{
 		super.update(delta);
 
-		//scene.cameras.currentCamera.x++;
-		gameObject.rotation += 0.02;
+		paddleLeft.y = MathHelper.clamp(Milkshake.getInstance().mousePosition.y, 20, 400);
+		paddleRight.y = MathHelper.clamp(ball.y - 150, 20, 400);
+
+		ball.x += ballX;
+		ball.y += ballY;
+		
+		if(ball.y > Globals.SCREEN_HEIGHT || ball.y < 0) ballY *= -1;
+		if(ball.x > Globals.SCREEN_WIDTH || ball.x < 0) ballX *= -1;
+
+		// for(camera in cameras.cameras)
+		// {
+		// 	camera.targetPosition = ball.position;
+		// }
 	}
 }
