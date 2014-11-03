@@ -1,6 +1,10 @@
 package ;
 
+import hxcollision.Collision;
+import hxcollision.shapes.Polygon;
+import hxcollision.shapes.Shape;
 import milkshake.core.DisplayObject;
+import milkshake.core.Graphics;
 import milkshake.core.Sprite;
 import milkshake.game.scene.camera.Camera;
 import milkshake.game.scene.camera.CameraPresets;
@@ -24,59 +28,96 @@ class SandPit
 	}
 }
 
+class SimpleCollisionObject extends DisplayObject
+{
+	public var shape(default, null):Shape;
+
+	public function new(width:Int, height:Int, color:Int = Color.WHITE)
+	{
+		super();
+
+		addNode(GraphicsHelper.generateRectangle(width, height, color));
+		shape = Polygon.rectangle(0, 0, width, height, false);
+	}
+
+	override public function update(detla:Float):Void
+	{
+		shape.x = x;
+		shape.y = y;
+
+		super.update(detla);
+	}
+}
+
 class SampleScene extends Scene
 {
-	var paddleLeft:DisplayObject;
-	var paddleRight:DisplayObject;
+	public static inline var PADDLE_WIDTH:Int = 30;
+	public static inline var PADDLE_HEIGHT:Int = 200;
 
-	var ball:DisplayObject;
-	var ballX:Float;
-	var ballY:Float;
+	public static inline var BALL_SIZE:Int = 10;
+	public static inline var BALL_SPEED:Int = 7;
+
+	var paddleLeft:SimpleCollisionObject;
+	var paddleRight:SimpleCollisionObject;
+	var ball:SimpleCollisionObject;
+
+	var ballVelocity:Vector2;
 
 	public function new()
 	{
 		super("SampleScene", CameraPresets.DEFAULT, Color.BLACK);
 
-		//gameObject = new DisplayObject();
-		addNode(paddleLeft = GraphicsHelper.generateRectangle(30, 300, Color.WHITE), 
+		addNode(paddleLeft = new SimpleCollisionObject(PADDLE_WIDTH, PADDLE_HEIGHT),
 		{
-			x: 20
+			x: 30
 		});
 
-		addNode(paddleRight = GraphicsHelper.generateRectangle(30, 300, Color.WHITE), 
+		addNode(paddleRight = new SimpleCollisionObject(PADDLE_WIDTH, PADDLE_HEIGHT),
 		{
-			// WishList:
-			// x: width - 20
-			// scale.x: 2
-			x: Globals.SCREEN_WIDTH - 50
+			x: Globals.SCREEN_WIDTH - 30 - paddleRight.width
 		});
-
-		addNode(ball = GraphicsHelper.generateRectangle(30, 30, Color.WHITE), 
+		
+		addNode(ball = new SimpleCollisionObject(BALL_SIZE, BALL_SIZE), 
 		{
-			anchor: Vector2.HALF,
 			position: Globals.SCREEN_CENTER
 		});
 
-		ballX = 3;
-		ballY = 3;
+		resetBall();
+	}
+
+	function resetBall()
+	{
+		ballVelocity = Vector2.EQUAL(BALL_SPEED);
+		ball.position = Globals.SCREEN_CENTER;
 	}
 
 	override public function update(delta:Float):Void
 	{
 		super.update(delta);
 
-		paddleLeft.y = MathHelper.clamp(Milkshake.getInstance().mousePosition.y, 20, 400);
-		paddleRight.y = MathHelper.clamp(ball.y - 150, 20, 400);
+		// Ball vs Paddle Collision
+		for(result in Collision.testShapes(ball.shape, [ paddleLeft.shape, paddleRight.shape ]))
+		{
+			ball.x += result.separation.x;
+			ball.y += result.separation.y;
 
-		ball.x += ballX;
-		ball.y += ballY;
+			ballVelocity.multi(Vector2.EQUAL(1.1));
+			ballVelocity.x *= -1;
+		}
+
+		// Paddle Movement
+		paddleLeft.y = MathHelper.clamp(Milkshake.getInstance().mousePosition.y, 0, Globals.SCREEN_HEIGHT - paddleLeft.height);
+		paddleRight.y = MathHelper.clamp(ball.y - paddleLeft.height / 2, 0, Globals.SCREEN_HEIGHT - paddleLeft.height);
+
+		// Ball Velocity
+		ball.position.add(ballVelocity);
 		
-		if(ball.y > Globals.SCREEN_HEIGHT || ball.y < 0) ballY *= -1;
-		if(ball.x > Globals.SCREEN_WIDTH || ball.x < 0) ballX *= -1;
+		// Bounce off Top & Bottom
+		if(ball.y < 0 || ball.y + ball.height > Globals.SCREEN_HEIGHT) ballVelocity.y *= -1;
 
-		// for(camera in cameras.cameras)
-		// {
-		// 	camera.targetPosition = ball.position;
-		// }
+		// Ensure ball is always clamped to screen height
+		ball.y = MathHelper.clamp(ball.y, 0, Globals.SCREEN_HEIGHT - ball.height);		
+
+		if(ball.x > Globals.SCREEN_WIDTH || ball.x < 0) resetBall();
 	}
 }
