@@ -13,6 +13,7 @@
     "grunt-haxe": "^0.1.12",
     "grunt-notify": "^0.3.0",
     "grunt-open": "^0.2.3",
-    "grunt-shell": "~0.7.0"
+    "grunt-shell": "~0.7.0",
+    "spritesheet-js": "^0.8.4"
   }
 }

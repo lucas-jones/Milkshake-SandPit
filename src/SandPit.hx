@@ -1,5 +1,6 @@
 package ;
 
+import milkshake.components.assets.SpriteSheets;
 import milkshake.Milkshake;
 import scenes.PongScene;
 

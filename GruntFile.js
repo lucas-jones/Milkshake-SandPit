@@ -83,7 +83,30 @@ module.exports = function (grunt)
 				tasks: [ "watch:haxe", "connect" ]
 			}
 		},
+	});
 
+	grunt.registerTask('spritesheets', function()
+	{
+		var exec = require('child_process').exec;
+		var fs = require('fs');
+		var path = require('path');
+
+		var spritesheets = "assets/spritesheets";
+
+		var spritesheetDirectories = fs.readdirSync(spritesheets).filter(function (file)
+		{
+			var fileUrl = path.resolve(spritesheets, file);
+
+    		return fs.statSync(fileUrl).isDirectory();
+		});
+
+		for(spritesheetKey in spritesheetDirectories)
+		{
+			var spritesheetId = spritesheetDirectories[spritesheetKey];
+
+			console.log("Generating " + spritesheetId + " spritesheet");
+			exec("spritesheet-js -n " + spritesheetId + " -p bin/assets/spritesheets/ assets/spritesheets/" + spritesheetId + "/*.png");
+		}
 	});
 
 
