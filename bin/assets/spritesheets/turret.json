@@ -1,0 +1,33 @@
+{
+	"meta": {
+		"image": "turret.png",
+		"size": {"w":163,"h":156},
+		"scale": "1"
+	},
+	"frames": {
+		"turret_enemy_base.png":
+		{
+            "frame": {"x":0,"y":94,"w":115,"h":62},
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {"x":0,"y":0,"w":115,"h":62},
+            "sourceSize": {"w":115,"h":62}
+		},
+		"turret_enemy_gun.png":
+		{
+            "frame": {"x":115,"y":0,"w":48,"h":72},
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {"x":0,"y":0,"w":48,"h":72},
+            "sourceSize": {"w":48,"h":72}
+		},
+		"turret_enemy_full.png":
+		{
+            "frame": {"x":0,"y":0,"w":115,"h":94},
+            "rotated": false,
+            "trimmed": false,
+            "spriteSourceSize": {"x":0,"y":0,"w":115,"h":94},
+            "sourceSize": {"w":115,"h":94}
+		}
+	}
+}

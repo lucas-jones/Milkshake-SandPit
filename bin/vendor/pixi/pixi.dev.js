@@ -12202,7 +12202,7 @@ PIXI.Ellipse.prototype.type = PIXI.Graphics.ELIP;
  * @param height {Number} the height
  * 
  */
-PIXI.Strip = function(texture)
+PIXI.Strip = function(texture, width, height)
 {
     PIXI.DisplayObjectContainer.call( this );
     
@@ -12222,9 +12222,9 @@ PIXI.Strip = function(texture)
                                       0, 1]);
 
     this.verticies = new PIXI.Float32Array([0, 0,
-                                            100, 0,
-                                            100, 100,
-                                            0, 100]);
+                                            width, 0,
+                                            width, height,
+                                            0, height]);
 
     this.colors = new PIXI.Float32Array([1, 1, 1, 1]);
 

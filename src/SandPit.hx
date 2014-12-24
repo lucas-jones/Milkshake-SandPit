@@ -1,8 +1,8 @@
 package ;
 
-import milkshake.components.assets.SpriteSheets;
 import milkshake.Milkshake;
 import scenes.PongScene;
+import scenes.PolygonScene;
 
 @:expose
 class SandPit
@@ -12,6 +12,7 @@ class SandPit
 	public static function boot()
 	{
 		var milkshake = Milkshake.boot();
-		milkshake.scenes.addScene(new PongScene());
+		//milkshake.scenes.addScene(new PongScene());
+		milkshake.scenes.addScene(new PolygonScene());
 	}
 }

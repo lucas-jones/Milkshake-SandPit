@@ -3,8 +3,10 @@ package scenes;
 import hxcollision.Collision;
 import hxcollision.shapes.Polygon;
 import hxcollision.shapes.Shape;
+import milkshake.assets.SpriteSheets;
 import milkshake.core.DisplayObject;
 import milkshake.core.Graphics;
+import milkshake.core.Sprite;
 import milkshake.game.collision.CollisionDisplayObject;
 import milkshake.game.scene.camera.Camera;
 import milkshake.game.scene.camera.CameraPresets;
@@ -23,6 +25,8 @@ class SimpleCollisionObject extends CollisionDisplayObject
 		super(Polygon.rectangle(0, 0, width, height, false));
 
 		addNode(GraphicsHelper.generateRectangle(width, height, color));
+
+		//trace(SpriteSheets.CHARACTERS);
 	}
 }
 
@@ -42,7 +46,12 @@ class PongScene extends Scene
 
 	public function new()
 	{
-		super("SampleScene", CameraPresets.DEFAULT, Color.BLACK);
+		super("SampleScene", [ SpriteSheets.CHARACTERS, SpriteSheets.TURRET ], CameraPresets.DEFAULT, Color.BLACK);
+	}
+
+	override public function create():Void
+	{
+		super.create();
 
 		addNode(paddleLeft = new SimpleCollisionObject(PADDLE_WIDTH, PADDLE_HEIGHT),
 		{
@@ -55,6 +64,11 @@ class PongScene extends Scene
 		});
 
 		addNode(ball = new SimpleCollisionObject(BALL_SIZE, BALL_SIZE));
+
+		addNode(Sprite.fromFrame("character_evil.png"),
+		{
+			scaleX: 2
+		});
 
 		resetBall();
 	}
