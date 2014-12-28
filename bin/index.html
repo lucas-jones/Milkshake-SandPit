@@ -8,15 +8,13 @@
 	</head>
 
 	<body>
-		<canvas id="canvas" />
-
 		<script src="vendor/pixi/pixi.dev.js"></script>
 		<script src="sandpit.js"></script>
 		<!--<script src="{{generator.app}}.js"></script>-->
 
 		<script>
 			// Should load from json?
-			var renderer = new PIXI.autoDetectRenderer(1280, 720, document.getElementById('canvas'));
+			var renderer = new PIXI.autoDetectRenderer(512, 512, document.getElementById('canvas'));
 
 			document.body.appendChild(renderer.view);
 
