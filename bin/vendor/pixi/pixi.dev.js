@@ -20090,4 +20090,3 @@ Object.defineProperty(PIXI.RGBSplitFilter.prototype, 'blue', {
         root.PIXI = PIXI;
     }
 }).call(this);
-//# sourceMappingURL=pixi.dev.js.map

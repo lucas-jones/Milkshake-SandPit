@@ -1,8 +1,7 @@
 package ;
 
 import milkshake.Milkshake;
-import scenes.PongScene;
-import scenes.PolygonScene;
+import scenes.TestScene;
 
 @:expose
 class SandPit
@@ -13,6 +12,6 @@ class SandPit
 	{
 		var milkshake = Milkshake.boot();
 		//milkshake.scenes.addScene(new PongScene());
-		milkshake.scenes.addScene(new PolygonScene());
+		milkshake.scenes.addScene(new TestScene());
 	}
 }
