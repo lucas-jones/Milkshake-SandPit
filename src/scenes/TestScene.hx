@@ -19,29 +19,29 @@ class TestScene extends Scene
 
 	public function new()
 	{
-		super("TestScene", [ "images/stars.png" ], CameraPresets.DEFAULT, Color.BLUE);
+		super("TestScene", [ "assets/images/dino/stars.png" ], CameraPresets.DEFAULT, Color.BLUE);
 	}
 
 	override public function create():Void
 	{
 		super.create();
 
-		addNode(new Sprite(Texture.fromImage("images/stars.png")));
+		addNode(new Sprite(Texture.fromImage("assets/images/dino/stars.png")));
 
-		addNode(new Sprite(Texture.fromImage("images/logo.png")),
+		addNode(new Sprite(Texture.fromImage("assets/images/dino/logo.png")),
 		{
 			anchor: Vector2.HALF,
 			position: new Vector2(Globals.SCREEN_CENTER.x, 140)
 		});
 
-		addNode(world = new Sprite(Texture.fromImage("images/world.png")),
+		addNode(world = new Sprite(Texture.fromImage("assets/images/dino/world.png")),
 		{
 			anchor: Vector2.HALF,
-			position: new Vector2(Globals.SCREEN_CENTER.x, Globals.SCREEN_HEIGHT * 2),
+			position: new Vector2(Globals.SCREEN_CENTER.x, Globals.SCREEN_HEIGHT + 200),
 			scale: Vector2.EQUAL(0.8)
 		});
 		
-		world.tween(2, { y: Globals.SCREEN_HEIGHT + 200 });
+		world.tweenFrom(2, { y: Globals.SCREEN_HEIGHT * 2 });
 	}
 
 	override public function update(deltaTime:Float):Void
