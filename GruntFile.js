@@ -44,8 +44,8 @@ module.exports = function (grunt)
 				files: [{
 							cwd: 'assets/',
 							expand: true,
-							src: ['**'],
-							dest: 'bin'
+							src: [ '**', "!spritesheets/**" ],
+							dest: 'bin/assets'
 						}]
 			}
 		},
