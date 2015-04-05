@@ -1,11 +1,15 @@
 -main SandPit
+
 -cp libs/milkshake/src
 -cp libs/milkshake/libs
 -cp src
+
 -lib compiletime
 -lib mconsole
 -lib actuate
+
 -D pixijs
+
 -js bin/sandpit.js
 
 # -js bin/{settings.name}.js
