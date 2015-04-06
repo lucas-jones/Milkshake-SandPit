@@ -10,23 +10,7 @@
 		<script src="sandpit.js"></script>
 
 		<script>
-			// Should load from json?
-			var renderer = new PIXI.autoDetectRenderer(1280, 720, document.getElementById('canvas'));
-
-			document.body.appendChild(renderer.view);
-
-			SandPit.boot();
-
-			requestAnimFrame(update);
-
-			function update()
-			{
-			    milkshake.Milkshake.getInstance().update(1);
-			    renderer.render(milkshake.Milkshake.getInstance().stage);
-
-			    requestAnimFrame(update);
-			}
-
+			//SandPit.boot();
 		</script>
 	</body>
 </html>
