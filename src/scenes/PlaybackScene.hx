@@ -7,7 +7,9 @@ import milkshake.game.scene.camera.Camera;
 import milkshake.game.scene.camera.CameraPresets;
 import milkshake.game.scene.Scene;
 import milkshake.game.tile.renderers.BasicTileMapRenderer;
+import milkshake.game.tile.renderers.BoltTileMapRenderer;
 import milkshake.game.tile.TileMap;
+import milkshake.game.tile.TileMapCollision;
 import milkshake.game.tile.TileMapData;
 import milkshake.Milkshake;
 import milkshake.utils.Color;
@@ -30,7 +32,9 @@ class PlaybackScene extends Scene
 
 		tileMapData = TileMapData.fromCSV(CompileTime.readFile("assets/tilemaps/data.csv"));
 
-		addNode(new TileMap(tileMapData, new BasicTileMapRenderer(BaseTexture.fromImage(TileSheets.GLADE), 24)));
+		addNode(new TileMap(tileMapData, new BoltTileMapRenderer(BaseTexture.fromImage(TileSheets.GLADE), 24)));
+		//addNode(new TileMapCollision(tileMapData, 24));
+
 		addNode(graphics = new Graphics());
 	}
 
@@ -38,20 +42,16 @@ class PlaybackScene extends Scene
 	{
 		super.update(delta);
 
-		var camera = this.cameras.activeCameras[0];
-
-		camera.targetZoom = 1;//(Milkshake.getInstance().mousePosition.y / 720) + 0.5;
-
-		camera.targetPosition.x = (Milkshake.getInstance().mousePosition.x);
-		camera.targetPosition.y = (Milkshake.getInstance().mousePosition.y);
+		cameras.activeCameras[0].targetPosition.y += (0.3 * delta);
+		//cameras.activeCameras[0].targetPosition.y += 5;
 	}
 
 	override public function render(camera:Camera):Void
 	{
 		super.render(camera);
 
-		graphics.graphics.clear();
-		graphics.graphics.beginFill(0xFF0000, 0.5);
-		graphics.graphics.drawRect(camera.boundingBox.x, camera.boundingBox.y, camera.boundingBox.width, camera.boundingBox.height);
+		// graphics.clear();
+		// graphics.begin(0xFF0000, 0.5);
+		// graphics.drawRectangle(camera.boundingBox);
 	}
 }
