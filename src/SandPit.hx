@@ -2,6 +2,7 @@ package ;
 
 import milkshake.Milkshake;
 import milkshake.utils.Globals;
+import scenes.MemoryTestScene;
 import scenes.PlaybackScene;
 
 @:expose

@@ -22,6 +22,7 @@ module.exports = function (grunt)
 					base: 'bin',
 					livereload: true,
 					debug: true,
+					hostname: "0.0.0.0",
 					open:
 					{
 						target: 'http://127.0.0.1:8080'

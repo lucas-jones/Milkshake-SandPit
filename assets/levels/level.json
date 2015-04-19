@@ -1,0 +1,248 @@
+{
+  "level": {
+    "name": "Main",
+    "minx": "0",
+    "miny": "0",
+    "maxx": "1032",
+    "maxy": "1008",
+    "bgColor": "0xff777777",
+    "layer": [
+      {
+        "name": "Background_Sprites",
+        "xScroll": "1.000",
+        "yScroll": "1.000",
+        "sprite": [
+          {
+            "class": "Avatar",
+            "name": "cliff_07",
+            "x": "-25.00",
+            "y": "146.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "cliff_07",
+            "x": "191.00",
+            "y": "320.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "cliff_07",
+            "x": "-321.00",
+            "y": "560.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "cliff_07",
+            "x": "161.00",
+            "y": "726.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "cliff_07",
+            "x": "367.00",
+            "y": "-154.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          }
+        ]
+      },
+      {
+        "name": "Middleground_Tilemap",
+        "xScroll": "1.000",
+        "yScroll": "1.000",
+        "map": {
+          "csv": "area8/mapCSV_Main_Middleground_Tilemap.csv",
+          "tiles": "../../deploy/assets/dev_tiles_glade.png",
+          "x": "0.000",
+          "y": "0.000",
+          "tileWidth": "24",
+          "tileHeight": "24",
+          "hasHits": "false",
+          "collIdx": "1",
+          "drawIdx": "1",
+          "properties": {
+            "tile": [
+              {
+                "id": "20",
+                "prop": {
+                  "name": "gadgets",
+                  "value": "TileSmash"
+                }
+              },
+              {
+                "id": "21",
+                "prop": {
+                  "name": "gadgets",
+                  "value": "Jump,DoubleJump"
+                }
+              },
+              {
+                "id": "22",
+                "prop": {
+                  "name": "gadgets",
+                  "value": "Jump,Helicopter"
+                }
+              },
+              {
+                "id": "23",
+                "prop": {
+                  "name": "gadgets",
+                  "value": "TileSwitch,DoubleJump,Jump"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Foreground_Tilemap",
+        "xScroll": "1.000",
+        "yScroll": "1.000",
+        "map": {
+          "csv": "area8/mapCSV_Main_Foreground_Tilemap.csv",
+          "tiles": "../../deploy/assets/dev_tiles.png",
+          "x": "0.000",
+          "y": "0.000",
+          "tileWidth": "24",
+          "tileHeight": "24",
+          "hasHits": "false",
+          "collIdx": "1",
+          "drawIdx": "1"
+        }
+      },
+      {
+        "name": "Paths",
+        "xScroll": "1.000",
+        "yScroll": "1.000",
+        "path": [
+          {
+            "spline": "false",
+            "closed": "false",
+            "nodes": {
+              "node": [
+                {
+                  "x": "913.00",
+                  "y": "625.00"
+                },
+                {
+                  "x": "633.00",
+                  "y": "625.00"
+                }
+              ]
+            },
+            "properties": {
+              "prop": [
+                {
+                  "name": "animal",
+                  "value": "bird_evil"
+                },
+                {
+                  "name": "evil",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          {
+            "spline": "false",
+            "closed": "false",
+            "nodes": {
+              "node": [
+                {
+                  "x": "353.00",
+                  "y": "626.00"
+                },
+                {
+                  "x": "613.00",
+                  "y": "628.00"
+                }
+              ]
+            },
+            "properties": {
+              "prop": [
+                {
+                  "name": "animal",
+                  "value": "bird_evil"
+                },
+                {
+                  "name": "evil",
+                  "value": "true"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Foreground_Sprites",
+        "xScroll": "1.000",
+        "yScroll": "1.000",
+        "sprite": {
+          "class": "Avatar",
+          "name": "glade_jumpexit_wall01",
+          "x": "-25.00",
+          "y": "2.00",
+          "angle": "0.00",
+          "flip": "true",
+          "xScale": "1.00",
+          "yScale": "1.00"
+        }
+      },
+      {
+        "name": "Resources",
+        "xScroll": "1.000",
+        "yScroll": "1.000",
+        "map": {
+          "csv": "area8/mapCSV_Main_Resources.csv",
+          "tiles": "../../deploy/assets/tiles/resources.png",
+          "x": "0.000",
+          "y": "0.000",
+          "tileWidth": "24",
+          "tileHeight": "24",
+          "hasHits": "false",
+          "collIdx": "1",
+          "drawIdx": "1"
+        }
+      },
+      {
+        "name": "Discoveries",
+        "xScroll": "1.000",
+        "yScroll": "1.000",
+        "sprite": {
+          "class": "glade_4",
+          "name": "glade_4",
+          "x": "280.00",
+          "y": "841.00",
+          "angle": "0.00",
+          "flip": "true",
+          "xScale": "1.00",
+          "yScale": "1.00",
+          "properties": {
+            "prop": {
+              "name": "ID",
+              "value": "glade_4_1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
