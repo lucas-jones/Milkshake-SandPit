@@ -3,8 +3,8 @@
     "name": "Main",
     "minx": "0",
     "miny": "0",
-    "maxx": "1032",
-    "maxy": "1008",
+    "maxx": "2016",
+    "maxy": "3024",
     "bgColor": "0xff777777",
     "layer": [
       {
@@ -14,9 +14,89 @@
         "sprite": [
           {
             "class": "Avatar",
-            "name": "cliff_07",
-            "x": "-25.00",
-            "y": "146.00",
+            "name": "background_grass",
+            "x": "1.00",
+            "y": "2805.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "417.00",
+            "y": "2808.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "17.66"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "585.80",
+            "y": "1944.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "40.22",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "569.00",
+            "y": "1001.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1511.00",
+            "y": "2840.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "17.29"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1507.00",
+            "y": "1956.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1495.00",
+            "y": "2428.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1703.00",
+            "y": "38.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "29.70",
+            "yScale": "50.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "842.00",
+            "y": "613.00",
             "angle": "0.00",
             "flip": "false",
             "xScale": "1.00",
@@ -24,9 +104,209 @@
           },
           {
             "class": "Avatar",
-            "name": "cliff_07",
-            "x": "191.00",
-            "y": "320.00",
+            "name": "treecircle02",
+            "x": "863.00",
+            "y": "506.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.88",
+            "yScale": "0.88"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "322.00",
+            "y": "1745.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.40",
+            "yScale": "0.40"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "299.00",
+            "y": "1793.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.55",
+            "yScale": "0.55"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "300.00",
+            "y": "1865.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.53",
+            "yScale": "0.53"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "289.00",
+            "y": "1918.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.61",
+            "yScale": "0.61"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "287.00",
+            "y": "2078.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.59",
+            "yScale": "0.59"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "291.00",
+            "y": "2002.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.59",
+            "yScale": "0.59"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "294.00",
+            "y": "2156.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.57",
+            "yScale": "0.57"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "288.00",
+            "y": "2226.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.61",
+            "yScale": "0.61"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "278.00",
+            "y": "2301.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.68",
+            "yScale": "0.68"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "272.00",
+            "y": "2386.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.68",
+            "yScale": "0.68"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "268.00",
+            "y": "2469.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.75",
+            "yScale": "0.75"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle",
+            "x": "226.00",
+            "y": "2556.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "110.00",
+            "y": "2273.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.49",
+            "yScale": "0.49"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "103.00",
+            "y": "2333.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.54",
+            "yScale": "0.54"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "86.00",
+            "y": "2397.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.63",
+            "yScale": "0.63"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "71.00",
+            "y": "2474.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.70",
+            "yScale": "0.70"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "71.00",
+            "y": "2560.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.76",
+            "yScale": "0.76"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "37.00",
+            "y": "2646.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch01",
+            "x": "188.00",
+            "y": "2528.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch01",
+            "x": "133.00",
+            "y": "2620.00",
             "angle": "0.00",
             "flip": "true",
             "xScale": "1.00",
@@ -34,9 +314,29 @@
           },
           {
             "class": "Avatar",
-            "name": "cliff_07",
-            "x": "-321.00",
-            "y": "560.00",
+            "name": "glade_tree_branch01",
+            "x": "184.00",
+            "y": "2724.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch01",
+            "x": "391.00",
+            "y": "2692.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch01",
+            "x": "341.00",
+            "y": "2457.00",
             "angle": "0.00",
             "flip": "true",
             "xScale": "1.00",
@@ -44,9 +344,119 @@
           },
           {
             "class": "Avatar",
-            "name": "cliff_07",
-            "x": "161.00",
-            "y": "726.00",
+            "name": "treecircle02",
+            "x": "1223.00",
+            "y": "242.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.46",
+            "yScale": "0.46"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "1195.00",
+            "y": "291.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.63",
+            "yScale": "0.63"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "1177.00",
+            "y": "367.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.75",
+            "yScale": "0.75"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "1165.00",
+            "y": "460.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.83",
+            "yScale": "0.83"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "1135.00",
+            "y": "561.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "879.00",
+            "y": "413.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.76",
+            "yScale": "0.76"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "917.00",
+            "y": "265.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.53",
+            "yScale": "0.53"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "903.00",
+            "y": "330.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.66",
+            "yScale": "0.66"
+          },
+          {
+            "class": "Avatar",
+            "name": "treecircle02",
+            "x": "837.00",
+            "y": "739.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "trunk_01 copy",
+            "x": "1137.00",
+            "y": "671.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "cliff_01",
+            "x": "3.00",
+            "y": "989.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_bg_door",
+            "x": "49.00",
+            "y": "912.00",
             "angle": "0.00",
             "flip": "true",
             "xScale": "1.00",
@@ -54,13 +464,373 @@
           },
           {
             "class": "Avatar",
-            "name": "cliff_07",
-            "x": "367.00",
-            "y": "-154.00",
+            "name": "cliff_darkpatch_02",
+            "x": "653.00",
+            "y": "1416.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "cliff_darkpatch_02",
+            "x": "857.00",
+            "y": "2410.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "cliff_darkpatch_01",
+            "x": "825.00",
+            "y": "2833.00",
             "angle": "0.00",
             "flip": "true",
             "xScale": "1.00",
             "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "cliff_darkpatch_02",
+            "x": "642.00",
+            "y": "2014.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "cliff_darkpatch_02",
+            "x": "955.00",
+            "y": "2607.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "down_right_sign",
+            "x": "1840.50",
+            "y": "2876.50",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "up_sign",
+            "x": "1911.00",
+            "y": "116.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "trunk_02 copy",
+            "x": "843.00",
+            "y": "247.50",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "trunk_02 copy",
+            "x": "1137.00",
+            "y": "257.50",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "trunk_01 copy",
+            "x": "228.00",
+            "y": "2651.50",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "trunk_01 copy",
+            "x": "275.00",
+            "y": "2403.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.70",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "trunk_02 copy",
+            "x": "268.00",
+            "y": "1996.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.75",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "trunk_02 copy",
+            "x": "315.00",
+            "y": "1720.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "0.46",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch01",
+            "x": "391.00",
+            "y": "2556.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch01",
+            "x": "338.00",
+            "y": "2159.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch01",
+            "x": "339.00",
+            "y": "1784.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "trunk_01 copy",
+            "x": "32.00",
+            "y": "2651.50",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "trunk_02 copy",
+            "x": "32.00",
+            "y": "2248.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "mill",
+            "x": "-409.00",
+            "y": "2821.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "mill",
+            "x": "166.00",
+            "y": "772.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch02",
+            "x": "1000.00",
+            "y": "793.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch02",
+            "x": "991.00",
+            "y": "416.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch01",
+            "x": "937.00",
+            "y": "796.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch02",
+            "x": "1292.00",
+            "y": "413.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_tree_branch01",
+            "x": "1244.00",
+            "y": "511.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "trunk_01 copy",
+            "x": "843.00",
+            "y": "658.50",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1622.00",
+            "y": "534.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "38.50",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1498.00",
+            "y": "1004.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1501.00",
+            "y": "1486.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1117.00",
+            "y": "2512.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1013.00",
+            "y": "1981.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "861.00",
+            "y": "1499.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1002.00",
+            "y": "1022.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "514.00",
+            "y": "1475.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "1007.00",
+            "y": "2382.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "24.50"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "628.00",
+            "y": "2423.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "50.00",
+            "yScale": "47.99"
+          },
+          {
+            "class": "purple_sprite",
+            "name": "purple_sprite",
+            "x": "533.00",
+            "y": "2422.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "13.83",
+            "yScale": "47.99"
           }
         ]
       },
@@ -69,7 +839,7 @@
         "xScroll": "1.000",
         "yScroll": "1.000",
         "map": {
-          "csv": "area8/mapCSV_Main_Middleground_Tilemap.csv",
+          "csv": "area13/mapCSV_Main_Middleground_Tilemap.csv",
           "tiles": "../../deploy/assets/dev_tiles_glade.png",
           "x": "0.000",
           "y": "0.000",
@@ -91,7 +861,7 @@
                 "id": "21",
                 "prop": {
                   "name": "gadgets",
-                  "value": "Jump,DoubleJump"
+                  "value": "DoubleJump"
                 }
               },
               {
@@ -105,7 +875,7 @@
                 "id": "23",
                 "prop": {
                   "name": "gadgets",
-                  "value": "TileSwitch,DoubleJump,Jump"
+                  "value": "Grasshopper"
                 }
               }
             ]
@@ -117,7 +887,7 @@
         "xScroll": "1.000",
         "yScroll": "1.000",
         "map": {
-          "csv": "area8/mapCSV_Main_Foreground_Tilemap.csv",
+          "csv": "area13/mapCSV_Main_Foreground_Tilemap.csv",
           "tiles": "../../deploy/assets/dev_tiles.png",
           "x": "0.000",
           "y": "0.000",
@@ -139,26 +909,20 @@
             "nodes": {
               "node": [
                 {
-                  "x": "913.00",
-                  "y": "625.00"
+                  "x": "1868.95",
+                  "y": "1455.39"
                 },
                 {
-                  "x": "633.00",
-                  "y": "625.00"
+                  "x": "1588.95",
+                  "y": "1455.71"
                 }
               ]
             },
             "properties": {
-              "prop": [
-                {
-                  "name": "animal",
-                  "value": "bird_evil"
-                },
-                {
-                  "name": "evil",
-                  "value": "true"
-                }
-              ]
+              "prop": {
+                "name": "animal",
+                "value": "bird_evil"
+              }
             }
           },
           {
@@ -167,26 +931,174 @@
             "nodes": {
               "node": [
                 {
-                  "x": "353.00",
-                  "y": "626.00"
+                  "x": "253.00",
+                  "y": "292.61"
                 },
                 {
-                  "x": "613.00",
-                  "y": "628.00"
+                  "x": "539.00",
+                  "y": "294.41"
                 }
               ]
             },
             "properties": {
-              "prop": [
+              "prop": {
+                "name": "animal",
+                "value": "bird_gray"
+              }
+            }
+          },
+          {
+            "spline": "false",
+            "closed": "false",
+            "nodes": {
+              "node": [
                 {
-                  "name": "animal",
-                  "value": "bird_evil"
+                  "x": "1564.00",
+                  "y": "455.00"
                 },
                 {
-                  "name": "evil",
-                  "value": "true"
+                  "x": "1278.00",
+                  "y": "454.00"
                 }
               ]
+            },
+            "properties": {
+              "prop": {
+                "name": "animal",
+                "value": "bird_red"
+              }
+            }
+          },
+          {
+            "spline": "false",
+            "closed": "false",
+            "nodes": {
+              "node": [
+                {
+                  "x": "938.00",
+                  "y": "413.61"
+                },
+                {
+                  "x": "1224.00",
+                  "y": "415.41"
+                }
+              ]
+            },
+            "properties": {
+              "prop": {
+                "name": "animal",
+                "value": "bird_gray"
+              }
+            }
+          },
+          {
+            "spline": "false",
+            "closed": "false",
+            "nodes": {
+              "node": [
+                {
+                  "x": "866.00",
+                  "y": "348.00"
+                },
+                {
+                  "x": "580.00",
+                  "y": "347.00"
+                }
+              ]
+            },
+            "properties": {
+              "prop": {
+                "name": "animal",
+                "value": "bird_red"
+              }
+            }
+          },
+          {
+            "spline": "false",
+            "closed": "false",
+            "nodes": {
+              "node": [
+                {
+                  "x": "931.00",
+                  "y": "224.00"
+                },
+                {
+                  "x": "1217.00",
+                  "y": "225.80"
+                }
+              ]
+            },
+            "properties": {
+              "prop": {
+                "name": "animal",
+                "value": "bird_gray"
+              }
+            }
+          },
+          {
+            "spline": "false",
+            "closed": "false",
+            "nodes": {
+              "node": [
+                {
+                  "x": "1581.00",
+                  "y": "178.00"
+                },
+                {
+                  "x": "1295.00",
+                  "y": "177.00"
+                }
+              ]
+            },
+            "properties": {
+              "prop": {
+                "name": "animal",
+                "value": "bird_red"
+              }
+            }
+          },
+          {
+            "spline": "false",
+            "closed": "false",
+            "nodes": {
+              "node": [
+                {
+                  "x": "1585.00",
+                  "y": "1644.00"
+                },
+                {
+                  "x": "1865.00",
+                  "y": "1643.00"
+                }
+              ]
+            },
+            "properties": {
+              "prop": {
+                "name": "animal",
+                "value": "bird_evil"
+              }
+            }
+          },
+          {
+            "spline": "false",
+            "closed": "false",
+            "nodes": {
+              "node": [
+                {
+                  "x": "1514.01",
+                  "y": "2403.56"
+                },
+                {
+                  "x": "1794.01",
+                  "y": "2403.43"
+                }
+              ]
+            },
+            "properties": {
+              "prop": {
+                "name": "animal",
+                "value": "bird_evil"
+              }
             }
           }
         ]
@@ -195,23 +1107,195 @@
         "name": "Foreground_Sprites",
         "xScroll": "1.000",
         "yScroll": "1.000",
-        "sprite": {
-          "class": "Avatar",
-          "name": "glade_jumpexit_wall01",
-          "x": "-25.00",
-          "y": "2.00",
-          "angle": "0.00",
-          "flip": "true",
-          "xScale": "1.00",
-          "yScale": "1.00"
-        }
+        "sprite": [
+          {
+            "class": "Avatar",
+            "name": "glade_dropexit_wall01",
+            "x": "1842.00",
+            "y": "2940.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_fg_door",
+            "x": "-32.00",
+            "y": "888.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "263.00",
+            "y": "1056.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "1702.00",
+            "y": "336.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "198.00",
+            "y": "2904.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "49.00",
+            "y": "2904.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_shrooms02",
+            "x": "429.00",
+            "y": "2955.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_shrooms02",
+            "x": "996.00",
+            "y": "2955.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_shrooms02",
+            "x": "1347.00",
+            "y": "2811.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "455.00",
+            "y": "2328.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "1849.00",
+            "y": "1104.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_shrooms02",
+            "x": "1766.00",
+            "y": "2907.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "291.00",
+            "y": "1704.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "408.00",
+            "y": "1536.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "96.00",
+            "y": "1369.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "315.00",
+            "y": "2088.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "garden_shroom",
+            "x": "459.00",
+            "y": "1824.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          },
+          {
+            "class": "Avatar",
+            "name": "glade_jumpexit_wall01",
+            "x": "1828.00",
+            "y": "2.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00"
+          }
+        ]
       },
       {
         "name": "Resources",
         "xScroll": "1.000",
         "yScroll": "1.000",
         "map": {
-          "csv": "area8/mapCSV_Main_Resources.csv",
+          "csv": "area13/mapCSV_Main_Resources.csv",
           "tiles": "../../deploy/assets/tiles/resources.png",
           "x": "0.000",
           "y": "0.000",
@@ -226,22 +1310,56 @@
         "name": "Discoveries",
         "xScroll": "1.000",
         "yScroll": "1.000",
-        "sprite": {
-          "class": "glade_4",
-          "name": "glade_4",
-          "x": "280.00",
-          "y": "841.00",
-          "angle": "0.00",
-          "flip": "true",
-          "xScale": "1.00",
-          "yScale": "1.00",
-          "properties": {
-            "prop": {
-              "name": "ID",
-              "value": "glade_4_1"
+        "sprite": [
+          {
+            "class": "glade_4",
+            "name": "glade_4",
+            "x": "1473.00",
+            "y": "1297.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00",
+            "properties": {
+              "prop": {
+                "name": "ID",
+                "value": "glade_4_14"
+              }
+            }
+          },
+          {
+            "class": "glade_4",
+            "name": "glade_4",
+            "x": "100.00",
+            "y": "2425.00",
+            "angle": "0.00",
+            "flip": "true",
+            "xScale": "1.00",
+            "yScale": "1.00",
+            "properties": {
+              "prop": {
+                "name": "ID",
+                "value": "glade_4_13"
+              }
+            }
+          },
+          {
+            "class": "glade_3",
+            "name": "glade_3",
+            "x": "1306.00",
+            "y": "880.00",
+            "angle": "0.00",
+            "flip": "false",
+            "xScale": "1.00",
+            "yScale": "1.00",
+            "properties": {
+              "prop": {
+                "name": "ID",
+                "value": "glade_3_9"
+              }
             }
           }
-        }
+        ]
       }
     ]
   }

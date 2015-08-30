@@ -1,6 +1,7 @@
 package scenes;
 
 import dame.DameLevel;
+import fpsmeter.FPSMeter;
 import haxe.Json;
 import milkshake.assets.SpriteSheets;
 import milkshake.assets.TileSheets;
@@ -10,7 +11,6 @@ import milkshake.game.scene.camera.Camera;
 import milkshake.game.scene.camera.CameraPresets;
 import milkshake.game.scene.Scene;
 import milkshake.game.tile.renderers.BasicTileMapRenderer;
-import milkshake.game.tile.renderers.BoltTileMapRenderer;
 import milkshake.game.tile.renderers.FastTileMapRenderer;
 import milkshake.game.tile.TileMap;
 import milkshake.game.tile.TileMapCollision;
@@ -20,7 +20,35 @@ import milkshake.Milkshake;
 import milkshake.utils.Color;
 import milkshake.utils.Globals;
 import milkshake.utils.GraphicsHelper;
-import pixi.BaseTexture;
+import pixi.core.textures.BaseTexture;
+
+class FPSCamera extends Camera
+{
+	var fpsMeter:FPSMeter;
+
+	public function new(id:String, x:Int, y:Int, width:Int, height:Int, renderWidth:Int = -1, renderHeight:Int = -1, active:Bool = true)
+	{
+		super(id, x, y, width, height, renderWidth, renderHeight, active);
+
+		fpsMeter = new FPSMeter(
+		{
+			smoothing: 10,
+			heat:1,
+			theme: "dark",
+			graph:   1, // Whether to show history graph.
+    		history: 20 // How many history states to show in a graph.
+		});
+	}
+
+	override public function update(delta:Float):Void
+	{
+		fpsMeter.tickStart();
+
+		super.update(delta);
+
+		fpsMeter.tick();
+	}
+}
 
 class PlaybackScene extends Scene
 {
@@ -31,6 +59,7 @@ class PlaybackScene extends Scene
 
 	public function new()
 	{
+
 		var json = Json.parse(CompileTime.readFile("assets/levels/level.json"));
 		var level = new DameLevel(json);
 
@@ -39,7 +68,7 @@ class PlaybackScene extends Scene
 			return "assets/sprites/" + sprite.name + ".png";
 		});
 
-		super("PlaybackScene", [ TileSheets.GLADE ].concat(sprites), CameraPresets.DEFAULT, Color.BLUE);
+		super("PlaybackScene", [ TileSheets.GLADE ].concat(sprites), [ new FPSCamera("MAIN", 0, 0, Globals.SCREEN_WIDTH, Globals.SCREEN_HEIGHT) ], Color.BLUE);
 	}
 
 	override public function create():Void
@@ -60,13 +89,11 @@ class PlaybackScene extends Scene
 
 			if(spriteEntry.flip == "true")
 			{
-				sprite.displayObject.scale.x = -1;
-				//sprite.x += sprite.width * Math.abs(sprite.scale.x);
-				//sprite.scale.x *= -1;
-
+				sprite.anchor.x = 1;
+				sprite.scale.x *= -1;
 			}
 
-			addNode(sprite);
+			// addNode(sprite);
 		}
 
 		tileMapData = TileMapData.fromCSV(CompileTime.readFile("assets/tilemaps/data.csv"));
@@ -76,9 +103,28 @@ class PlaybackScene extends Scene
 
 		breakableTiles = tileMapData.cut([ 7 ]);
 
-		addNode(new TileMap(tileMapData, new BoltTileMapRenderer(BaseTexture.fromImage(TileSheets.GLADE), 24, true, false)));
-		addNode(new TileMap(breakableTiles, new FastTileMapRenderer(BaseTexture.fromImage(TileSheets.GLADE), 24, Globals.SCREEN_WIDTH, Globals.SCREEN_HEIGHT)));
+		//addNode(new TileMap(tileMapData, new BoltTileMapRenderer(BaseTexture.fromImage(TileSheets.GLADE), 24, true, false)));
+		//addNode(new TileMap(breakableTiles, new FastTileMapRenderer(BaseTexture.fromImage(TileSheets.GLADE), 24, Globals.SCREEN_WIDTH, Globals.SCREEN_HEIGHT)));
 		//addNode(new TileMapCollision(tileMapData, 24));
+
+
+		// for(spriteEntry in level.foregroundSprites)
+		// {
+		// 	var sprite = Sprite.fromUrl("assets/sprites/" + spriteEntry.name + ".png");
+
+		// 	sprite.x = spriteEntry.x;
+		// 	sprite.y = spriteEntry.y;
+		// 	sprite.scale.x = spriteEntry.xScale;
+		// 	sprite.scale.y = spriteEntry.yScale;
+
+		// 	if(spriteEntry.flip == "true")
+		// 	{
+		// 		sprite.anchor.x = 1;
+		// 		sprite.scale.x *= -1;
+		// 	}
+
+		// 	//addNode(sprite);
+		// }
 
 		addNode(graphics = new Graphics());
 
@@ -89,39 +135,48 @@ class PlaybackScene extends Scene
 	{
 		super.update(delta);
 
-		//cameras.activeCameras[0].targetPosition.y = 2000;//(0.5 * delta);
-		//cameras.activeCameras[0].targetPosition.y += 5;
+		for(camera in cameras.activeCameras)
+		{
+			camera.targetPosition.y = 1000;//(0.6 * delta);
+			camera.targetPosition.x = 1000;//(0.6 * delta);
+		}
 	}
 
 	override public function render(camera:Camera):Void
 	{
 		super.render(camera);
 
-		graphics.clear();
-		graphics.begin(0xFF0000, 0.5);
+		// for(child in displayObject.children)
+		// {
+		// 	child.visible = child.position.y > camera.boundingBox.y - child.height && child.position.y < camera.boundingBox.y + camera.boundingBox.height
+		// 					&& child.position.x > camera.boundingBox.x - child.width && child.position.x < camera.boundingBox.x + camera.boundingBox.width;
+		// }
 
-		var mousePosition = new Vector2(Math.floor(Milkshake.getInstance().mousePosition.x / 24) * 24, Math.floor(Milkshake.getInstance().mousePosition.y / 24) * 24);
+		// graphics.clear();
+		// graphics.begin(0xFF0000, 0.5);
 
-		var tileX:Int = Std.int(mousePosition.x / 24);
-		var tileY:Int = Std.int(mousePosition.y / 24);
+		// var mousePosition = new Vector2(Math.floor(Milkshake.getInstance().mousePosition.x / 24) * 24, Math.floor(Milkshake.getInstance().mousePosition.y / 24) * 24);
 
-		if(tileX > 0 && tileX < breakableTiles.width)
-		{
-			if(tileY > 0 && tileY < breakableTiles.height)
-			{
-				if(breakableTiles.data[tileY][tileX] != null && breakableTiles.data[tileY][tileX] > 0)
-				{
-					breakableTiles.data[tileY][tileX] = 0;
-					Console.log("Hello!" + breakableTiles.data[tileY][tileX]);
-				}
-			}
-		}
+		// var tileX:Int = Std.int(mousePosition.x / 24);
+		// var tileY:Int = Std.int(mousePosition.y / 24);
+
+		// if(tileX > 0 && tileX < breakableTiles.width)
+		// {
+		// 	if(tileY > 0 && tileY < breakableTiles.height)
+		// 	{
+		// 		if(breakableTiles.data[tileY][tileX] != null && breakableTiles.data[tileY][tileX] > 0)
+		// 		{
+		// 			breakableTiles.data[tileY][tileX] = 0;
+		// 			Console.log("Hello!" + breakableTiles.data[tileY][tileX]);
+		// 		}
+		// 	}
+		// }
 		
 
 
 		
 
 
-		graphics.graphics.drawRect(mousePosition.x, mousePosition.y, 24, 24);
+		// graphics.graphics.drawRect(mousePosition.x, mousePosition.y, 24, 24);
 	}
 }

@@ -2,7 +2,6 @@ package ;
 
 import milkshake.Milkshake;
 import milkshake.utils.Globals;
-import scenes.MemoryTestScene;
 import scenes.PlaybackScene;
 
 @:expose
@@ -12,6 +11,6 @@ class SandPit
 	{
 		var milkshake = Milkshake.boot(new Settings(Globals.SCREEN_WIDTH, Globals.SCREEN_HEIGHT));
 
-		milkshake.scenes.addScene(new PlaybackScene());
+		milkshake.scenes.addScene(new scenes.DinoScene());
 	}
 }

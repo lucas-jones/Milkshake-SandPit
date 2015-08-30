@@ -3,6 +3,7 @@
 -cp libs/milkshake/src
 -cp libs/milkshake/libs
 -cp src
+-cp libs
 
 -lib compiletime
 -lib mconsole
